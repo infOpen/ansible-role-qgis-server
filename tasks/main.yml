@@ -1,0 +1,17 @@
+---
+
+# Main tasks file for qgis-server role
+
+- name: 'INIT | Manage variables to use for our target'
+  include: "{{ role_path }}/tasks/manage_variables.yml"
+  tags:
+    - 'role::qgis-server'
+    - 'role::qgis-server::init'
+
+
+- name: 'INSTALL | Manage OS family installation tasks'
+  become: True
+  include: "{{ role_path }}/tasks/install_{{ ansible_os_family | lower }}.yml"
+  tags:
+    - 'role::qgis-server'
+    - 'role::qgis-server::init'

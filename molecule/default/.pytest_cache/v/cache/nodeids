@@ -1,0 +1,18 @@
+[
+  "tests/test_installation.py::test_repository_files[ansible://qgis-server-docker-jessie-debian-/etc/apt/sources.list.d/qgis_org_debian.list]", 
+  "tests/test_installation.py::test_packages[ansible://qgis-server-docker-jessie-debian-qgis-server]", 
+  "tests/test_installation.py::test_fcgi_file[ansible://qgis-server-docker-jessie-debian-/usr/lib/cgi-bin/qgis_mapserv.fcgi]", 
+  "tests/test_installation.py::test_repository_files[ansible://qgis-server-docker-jessie-ubuntu-/etc/apt/sources.list.d/qgis_org_debian.list]", 
+  "tests/test_installation.py::test_packages[ansible://qgis-server-docker-jessie-debian-python-qgis]", 
+  "tests/test_installation.py::test_fcgi_file[ansible://qgis-server-docker-jessie-ubuntu-/usr/lib/cgi-bin/qgis_mapserv.fcgi]", 
+  "tests/test_installation.py::test_repository_files[ansible://qgis-server-docker-xenial-debian-/etc/apt/sources.list.d/qgis_org_debian.list]", 
+  "tests/test_installation.py::test_packages[ansible://qgis-server-docker-jessie-ubuntu-qgis-server]", 
+  "tests/test_installation.py::test_fcgi_file[ansible://qgis-server-docker-xenial-debian-/usr/lib/cgi-bin/qgis_mapserv.fcgi]", 
+  "tests/test_installation.py::test_repository_files[ansible://qgis-server-docker-xenial-ubuntu-/etc/apt/sources.list.d/qgis_org_debian.list]", 
+  "tests/test_installation.py::test_packages[ansible://qgis-server-docker-jessie-ubuntu-python-qgis]", 
+  "tests/test_installation.py::test_fcgi_file[ansible://qgis-server-docker-xenial-ubuntu-/usr/lib/cgi-bin/qgis_mapserv.fcgi]", 
+  "tests/test_installation.py::test_packages[ansible://qgis-server-docker-xenial-debian-qgis-server]", 
+  "tests/test_installation.py::test_packages[ansible://qgis-server-docker-xenial-debian-python-qgis]", 
+  "tests/test_installation.py::test_packages[ansible://qgis-server-docker-xenial-ubuntu-qgis-server]", 
+  "tests/test_installation.py::test_packages[ansible://qgis-server-docker-xenial-ubuntu-python-qgis]"
+]

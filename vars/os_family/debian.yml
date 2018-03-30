@@ -1,0 +1,19 @@
+---
+
+# QGIS Server Debian family variables
+
+# Installation variables
+_qgis_server_system_prerequisites:
+  - name: 'apt-transport-https'
+_qgis_server_repositories_keys:
+  - url: 'https://qgis.org/downloads/qgis-2017.gpg.key'
+_qgis_server_repositories:
+  - repo: >
+      deb https://qgis.org/{{ qgis_server_use_ubuntugis | ternary('ubuntugis', 'debian') }}{{ qgis_server_use_ltr | ternary('-ltr', '') }}
+      {{ ansible_distribution_release | lower }} main
+  - repo: >
+      deb-src https://qgis.org/{{ qgis_server_use_ubuntugis | ternary('ubuntugis', 'debian') }}{{ qgis_server_use_ltr | ternary('-ltr', '') }}
+      {{ ansible_distribution_release | lower }} main
+_qgis_server_system_packages:
+  - name: 'qgis-server'
+  - name: 'python-qgis'

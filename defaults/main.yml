@@ -1,0 +1,18 @@
+---
+
+# Defaults vars file for qgis-server role
+
+
+# Installation
+qgis_server_repository_cache_valid_time: 3600
+qgis_server_system_prerequisites: "{{ _qgis_server_system_prerequisites | default([]) }}"
+qgis_server_repositories_keys: "{{ _qgis_server_repositories_keys | default([]) }}"
+qgis_server_repositories: "{{ _qgis_server_repositories | default([]) }}"
+qgis_server_system_packages: "{{ _qgis_server_system_packages | default([]) }}"
+qgis_server_use_ltr: False
+
+# Specific Debian installation
+qgis_server_use_ubuntugis: False
+
+# Service
+qgis_server_service_name: "{{ _qgis_server_service_name | default('qgis-server') }}"
