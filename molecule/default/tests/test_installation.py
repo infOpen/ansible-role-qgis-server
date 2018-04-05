@@ -63,3 +63,24 @@ def test_fcgi_file(host, distribution, fcgi_file_path):
     assert fcgi_file.exists
     assert fcgi_file.user == 'root'
     assert fcgi_file.group == 'root'
+
+
+@pytest.mark.parametrize('path', [
+    ('/opt/qgis-server/'),
+    ('/opt/qgis-server/data'),
+    ('/opt/qgis-server/data/qgis-server-db'),
+    ('/opt/qgis-server/log'),
+    ('/opt/qgis-server/www'),
+])
+def test_additional_folders(host, path):
+    """
+    Ensure QGIS Server additional folders exists
+    """
+
+    current_dir = host.file(path)
+
+    assert current_dir.exists
+    assert current_dir.is_directory
+    assert current_dir.user == 'www-data'
+    assert current_dir.group == 'www-data'
+    assert current_dir.mode == 0o700

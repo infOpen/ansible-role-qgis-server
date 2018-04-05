@@ -10,6 +10,14 @@
     - 'role::qgis-server::install'
 
 
+- name: 'INSTALL | Manage Lizmap common pre-installation tasks'
+  become: True
+  include: "{{ role_path }}/tasks/common_pre_install.yml"
+  tags:
+    - 'role::lizmap'
+    - 'role::lizmap::install'
+
+
 - name: 'INSTALL | Manage OS family installation tasks'
   become: True
   include: "{{ role_path }}/tasks/install_{{ ansible_os_family | lower }}.yml"

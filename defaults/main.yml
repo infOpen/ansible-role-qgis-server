@@ -16,3 +16,18 @@ qgis_server_use_ubuntugis: False
 
 # Service
 qgis_server_service_name: "{{ _qgis_server_service_name | default('qgis-server') }}"
+
+# User and group management
+qgis_server_manage_group: False
+qgis_server_manage_user: False
+qgis_server_user:
+  name: 'www-data'
+qgis_server_group:
+  name: 'www-data'
+
+# Additional folders
+qgis_server_install_root_dir:
+  path: '/opt/qgis-server/'
+  owner: "{{ qgis_server_user.name }}"
+  group: "{{ qgis_server_group.name }}"
+  mode: '0700'

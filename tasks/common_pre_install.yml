@@ -1,0 +1,31 @@
+---
+
+- name: 'INSTALL | PRE | Manage QGIS Server group'
+  group:
+    name: "{{ qgis_server_group.name }}"
+    gid: "{{ qgis_server_group.gid | default(omit) }}"
+  when: "qgis_server_manage_group"
+
+
+- name: 'INSTALL | PRE | Manage QGIS Server user'
+  user:
+    name: "{{ qgis_server_user.name }}"
+    uid: "{{ qgis_server_user.uid | default(omit) }}"
+    group: "{{ qgis_server_user.group | default(omit) }}"
+    shell: "{{ qgis_server_user.shell | default(omit) }}"
+  when: "qgis_server_manage_user"
+
+
+- name: 'INSTALL | PRE | Ensure QGIS Server root installation dir exists'
+  file:
+    path: "{{ item }}"
+    owner: "{{ qgis_server_install_root_dir.owner }}"
+    group: "{{ qgis_server_install_root_dir.group }}"
+    mode: "{{ qgis_server_install_root_dir.mode }}"
+    state: 'directory'
+  with_items:
+    - "{{ qgis_server_install_root_dir.path }}"
+    - "{{ qgis_server_install_root_dir.path }}/data"
+    - "{{ qgis_server_install_root_dir.path }}/data/qgis-server-db"
+    - "{{ qgis_server_install_root_dir.path }}/log"
+    - "{{ qgis_server_install_root_dir.path }}/www"
