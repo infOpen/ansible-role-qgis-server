@@ -1,6 +1,10 @@
 # qgis-server
 
-[![Build Status](https://travis-ci.org/infOpen/ansible-role-qgis-server.svg?branch=master)](https://travis-ci.org/infOpen/ansible-role-qgis-server)
+[![Build Status](https://img.shields.io/travis/infOpen/ansible-role-qgis-server/master.svg?label=travis_master)](https://travis-ci.org/infOpen/ansible-role-qgis-server)
+[![Build Status](https://img.shields.io/travis/infOpen/ansible-role-qgis-server/develop.svg?label=travis_develop)](https://travis-ci.org/infOpen/ansible-role-qgis-server)
+[![Updates](https://pyup.io/repos/github/infOpen/ansible-role-qgis-server/shield.svg)](https://pyup.io/repos/github/infOpen/ansible-role-qgis-server/)
+[![Python 3](https://pyup.io/repos/github/infOpen/ansible-role-qgis-server/python-3-shield.svg)](https://pyup.io/repos/github/infOpen/ansible-role-qgis-server/)
+[![Ansible Role](https://img.shields.io/ansible/role/24685.svg)](https://galaxy.ansible.com/infOpen/qgis-server/)
 
 Install qgis-server package.
 
