@@ -1,0 +1,26 @@
+---
+
+# Main tasks file for qgis-server role
+
+- name: 'INIT | Manage variables to use for our target'
+  include: "{{ role_path }}/tasks/manage_variables.yml"
+  tags:
+    - 'role::qgis-server'
+    - 'role::qgis-server::init'
+    - 'role::qgis-server::install'
+
+
+- name: 'INSTALL | Manage Lizmap common pre-installation tasks'
+  become: True
+  include: "{{ role_path }}/tasks/common_pre_install.yml"
+  tags:
+    - 'role::lizmap'
+    - 'role::lizmap::install'
+
+
+- name: 'INSTALL | Manage OS family installation tasks'
+  become: True
+  include: "{{ role_path }}/tasks/install_{{ ansible_os_family | lower }}.yml"
+  tags:
+    - 'role::qgis-server'
+    - 'role::qgis-server::install'

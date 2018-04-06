@@ -1,0 +1,32 @@
+---
+
+# Debian family installation tasks
+
+- name: 'INSTALL | APT | Install system prerequisites'
+  apt:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('present') }}"
+    cache_valid_time: "{{ qgis_server_repository_cache_valid_time }}"
+  with_items: "{{ qgis_server_system_prerequisites }}"
+
+
+- name: 'INSTALL | APT | Configure repositories GPG keys'
+  apt_key:
+    url: "{{ item.url }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ qgis_server_repositories_keys }}"
+
+
+- name: 'INSTALL | APT | Configure repositories'
+  apt_repository:
+    repo: "{{ item.repo }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ qgis_server_repositories }}"
+
+
+- name: 'INSTALL | APT | Install QGIS Server packages'
+  apt:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('present') }}"
+    cache_valid_time: "{{ qgis_server_repository_cache_valid_time }}"
+  with_items: "{{ qgis_server_system_packages }}"
