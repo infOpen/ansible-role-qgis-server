@@ -1,6 +1,7 @@
 ---
 
 - name: 'INSTALL | PRE | Manage QGIS Server group'
+  become: True
   group:
     name: "{{ qgis_server_group.name }}"
     gid: "{{ qgis_server_group.gid | default(omit) }}"
@@ -8,6 +9,7 @@
 
 
 - name: 'INSTALL | PRE | Manage QGIS Server user'
+  become: True
   user:
     name: "{{ qgis_server_user.name }}"
     uid: "{{ qgis_server_user.uid | default(omit) }}"
@@ -17,13 +19,14 @@
 
 
 - name: 'INSTALL | PRE | Ensure QGIS Server root installation dir exists'
+  become: True
   file:
     path: "{{ item }}"
     owner: "{{ qgis_server_install_root_dir.owner }}"
     group: "{{ qgis_server_install_root_dir.group }}"
     mode: "{{ qgis_server_install_root_dir.mode }}"
     state: 'directory'
-  with_items:
+  loop:
     - "{{ qgis_server_install_root_dir.path }}"
     - "{{ qgis_server_install_root_dir.path }}/data"
     - "{{ qgis_server_install_root_dir.path }}/data/qgis-server-db"
