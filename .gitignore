@@ -12,7 +12,6 @@ tests/roles/
 
 # Pytest
 .cache
-.pytest_cache
 
 # Tox
 .tox

@@ -5,8 +5,13 @@
 # Installation variables
 _qgis_server_system_prerequisites:
   - name: 'apt-transport-https'
+  - name: 'gnupg'
+  - name: 'software-properties-common'
+
 _qgis_server_repositories_keys:
-  - url: 'https://qgis.org/downloads/qgis-2017.gpg.key'
+  - keyserver: 'keyserver.ubuntu.com'
+    id: '51F523511C7028C3'
+
 _qgis_server_repositories:
   - repo: >
       deb https://qgis.org/{{ qgis_server_use_ubuntugis | ternary('ubuntugis', 'debian') }}{{ qgis_server_use_ltr | ternary('-ltr', '') }}
@@ -14,6 +19,7 @@ _qgis_server_repositories:
   - repo: >
       deb-src https://qgis.org/{{ qgis_server_use_ubuntugis | ternary('ubuntugis', 'debian') }}{{ qgis_server_use_ltr | ternary('-ltr', '') }}
       {{ ansible_distribution_release | lower }} main
+
 _qgis_server_system_packages:
   - name: 'qgis-server'
   - name: 'python-qgis'
