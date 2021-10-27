@@ -10,7 +10,7 @@ _qgis_server_system_prerequisites:
 
 _qgis_server_repositories_keys:
   - keyserver: 'keyserver.ubuntu.com'
-    id: '51F523511C7028C3'
+    id: '46B5721DBBD2996A'
 
 _qgis_server_repositories:
   - repo: >
